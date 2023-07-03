@@ -1,0 +1,32 @@
+create database University;
+create table student(
+student_id int primary key,
+student_name varchar(50),
+student_age int,
+student_major varchar(50));
+insert into student values
+    (1,"surya",20,"computer science"),
+    (2,"rohith",21,"physics"),
+    (3,"prasanth",22,"maths"),
+    (4,"lokesh",20,"chemistry"),
+    (5,"sankaran",21,"computer science");
+#Write a query to retrieve all records from the "Students" table
+select * from student;
+
+#Write a query to retrieve the names of all students majoring in "Computer Science"
+select student_name from student where student_major="computer science";
+
+#To retrieve the details of the oldest student in the "Students" table, you can use this SQL query:
+
+select * from Student where student_age = (select max(student_age) from Student);
+
+
+#To update the major of a student with a specific student_id, you can use the following SQL query as an example:
+
+update Student set student_major = 'new major' where student_id = 3;
+
+
+#To delete a student with a specific student_id from the "Students" table, you can use this SQL query:
+
+
+delete from Student where student_id = 4;
